@@ -1,0 +1,4 @@
+127.0.0.1 - - [19/Dec/2023:16:35:30 +0600] "GET /users/ HTTP/1.1" 404 555 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0"
+127.0.0.1 - - [19/Dec/2023:16:35:39 +0600] "GET /favicon.ico HTTP/1.1" 404 555 "http://localhost:3000/users/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0"
+127.0.0.1 - - [19/Dec/2023:16:36:01 +0600] "GET /auth/users/ HTTP/1.1" 200 269 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0"
+127.0.0.1 - - [19/Dec/2023:16:36:19 +0600] "GET /profile/ HTTP/1.1" 404 79 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0"
