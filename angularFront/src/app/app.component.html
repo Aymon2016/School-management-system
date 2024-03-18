@@ -1,0 +1,16 @@
+
+<h1> value = {{show}}</h1>
+
+<button (click) = "onClick()"> click</button>
+
+
+<h1 *ngIf="show; then IfBlock else elseBlock">
+</h1>
+<ng-template #IfBlock>
+  <p>This content is shown if the condition is true.</p>
+</ng-template>
+<ng-template #elseBlock>
+  <p>This content is shown if the condition is false.</p>
+</ng-template>
+
+<h2 *ngFor = "let item of users"> {{item}}</h2>

@@ -1,0 +1,8 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "rule-name": "off",
+    "quotes": "off", // Disable the quotes rule
+    "eol-last": "off" // Disable the eol-last rule (empty line at the end of files)
+  }
+}
