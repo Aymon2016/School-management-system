@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 const useForm = (initialValues:any, onSubmit:any) => {
+    
     const [values, setValues] = useState(initialValues);
 
     const handleChange = (e:any) => {
@@ -17,11 +18,16 @@ const useForm = (initialValues:any, onSubmit:any) => {
         e.preventDefault();
         onSubmit(values);
     };
-
+  
+    const handleClear = () => {
+        setValues(initialValues);
+        
+      };
     return {
         values,
         handleChange,
-        handleSubmit
+        handleSubmit,
+        handleClear
     };
 };
 

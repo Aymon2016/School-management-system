@@ -10,26 +10,29 @@ const LoginForm = () => {
   }
 
 const onSubmit = async (values:any) => {
-    try {
-        const response = await fetch('', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(values)
-        });
-  
-        if (response.ok) {
-          console.log('Form submitted successfully');
-          
-        } else {
-          console.error('Form submission failed');
-          
-        }
-      } catch (error) {
-        console.error('Error submitting form:', error);
-        
-      }
+  try {
+    const response = await fetch(`${process.env.baseUrl}/auth/admin/register`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(values)
+    });
+
+    if (response.ok) {
+      console.log('Register submitted successfully');
+      // redux use
+      // token save
+      
+    } else {
+      console.error('Form submission failed');
+      
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    
+  }
+
 };
 
 const { values, handleChange, handleSubmit } = useForm(initialValues, onSubmit);

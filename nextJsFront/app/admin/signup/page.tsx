@@ -4,14 +4,14 @@ import useForm from '@/hooks/useForm'
 export default function Signup() {
 
     const initialValues = {
-        username: '',
+        userName: '',
         email: '',
         password: ''
     };
 
     const onSubmit = async (values:any) => {
         try {
-            const response = await fetch('', {
+            const response = await fetch(`${process.env.baseUrl}/auth/admin/register`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ export default function Signup() {
             });
       
             if (response.ok) {
-              console.log('Form submitted successfully');
+              console.log('Register submitted successfully');
               
             } else {
               console.error('Form submission failed');
@@ -45,7 +45,7 @@ export default function Signup() {
                         type="text"
                         id="username"
                         name="username"
-                        value={values.username}
+                        value={values.userName}
                         onChange={handleChange}
                         required
                         className="mt-1 block w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-sm shadow-sm focus:border-gray-500"

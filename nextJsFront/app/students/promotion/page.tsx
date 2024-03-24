@@ -1,9 +1,11 @@
 'use client'
 
+import useForm from '@/hooks/useForm';
 import Image from 'next/image';
 import { useState, } from 'react';
 
 const Promotion = () => {
+  // id dawer sate data fetching hobe then filed fullup hobe
     const initialFormData = {
         id:'',
         name: 'aymon',
@@ -13,27 +15,13 @@ const Promotion = () => {
         promotionClass:'',
         
       };
-    
-      const [formData, setFormData] = useState(initialFormData);
-     
-      const handleClear = () => {
-        setFormData(initialFormData);
-      };
+      
+    const onSubmit =(value:any) =>{
 
-      const handleChange = (e:any) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value,
-        });
-        console.log(formData)
-      };
-
-  const handleSubmit = (e:any) => {
-    e.preventDefault();
-    
-    console.log(formData);
-  };
+      console.log(values)
+    }
+   
+    const {values,handleChange,handleSubmit,handleClear} = useForm(initialFormData,onSubmit)
 
   return (
     <div className="max-w-5xl flex mx-auto flex-col justify-center rounded:md px-10 bg-white">
@@ -45,7 +33,7 @@ const Promotion = () => {
             <input
               type="text"
               name="id"
-              value={formData.id}
+              value={values.id}
               onChange={handleChange}
               className="w-full h-6 sm:h-10 border border-gray-300 rounded px-3 py-2"
             />
@@ -56,7 +44,7 @@ const Promotion = () => {
               type="text"
               name="name"
               disabled
-              value={formData.name}
+              value={values.name}
               onChange={handleChange}
               className="w-full h-6 sm:h-10 border border-gray-300 rounded px-3 py-2"
             />
@@ -66,7 +54,7 @@ const Promotion = () => {
             <input
               type="text"
               name="fatherName"
-              value={formData.fatherName}
+              value={values.fatherName}
               disabled
               onChange={handleChange}
               className="w-full h-6 sm:h-10 border border-gray-300 rounded px-3 py-2"
@@ -78,7 +66,7 @@ const Promotion = () => {
               type="text"
               name="motherName"
               disabled
-              value={formData.motherName}
+              value={values.motherName}
               onChange={handleChange}
               className="w-full h-6 sm:h-10 border border-gray-300 rounded px-3 py-2"
             />
@@ -89,7 +77,7 @@ const Promotion = () => {
               type="text"
               name="class"
               disabled
-              value={formData.currentClass}
+              value={values.currentClass}
               onChange={handleChange}
               className="w-full h-6 sm:h-10 border border-gray-300 rounded px-3 py-2"
             />
@@ -99,7 +87,7 @@ const Promotion = () => {
             <select
                 id="class"
                 name="promotionClass"
-                value={formData.promotionClass}
+                value={values.promotionClass}
                 onChange={handleChange}
                 className="w-full h-6 sm:h-10 border border-gray-300 rounded px-3 py-2 ">
                 <option value="">Select...</option>

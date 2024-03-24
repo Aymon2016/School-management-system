@@ -1,3 +1,5 @@
+
+
 import Searchbar from "@/components/searchbar";
 import Card from '@/components/card'
 import {Data} from '@/api/data'
@@ -27,3 +29,8 @@ export default  function Home() {
     </div>
   );
 }
+
+
+
+
+

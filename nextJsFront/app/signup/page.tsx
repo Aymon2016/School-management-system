@@ -11,7 +11,7 @@ export default function Signup() {
 
     const onSubmit = async (values:any) => {
         try {
-            const response = await fetch('', {
+            const response = await fetch(`${process.env.baseUrl}/auth/register`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ export default function Signup() {
             });
       
             if (response.ok) {
-              console.log('Form submitted successfully');
+              console.log('Register submitted successfully');
               
             } else {
               console.error('Form submission failed');

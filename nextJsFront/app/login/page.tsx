@@ -3,9 +3,10 @@ import Image from 'next/image'
 import thumnail from '@/public/loginPage/logo.png'
 import LoginForm from '@/components/loginForm'
 
-
+/// if user has verify token redirect dashboard
 
 export default function Login() {
+    
     return (
         <div className=" bg-slate-100  flex items-center justify-center  w-full h-screan">
             <div className="  flex   items-center justify-center  rounded-md bg-blue-900 w-4/5 h-4/5 ">

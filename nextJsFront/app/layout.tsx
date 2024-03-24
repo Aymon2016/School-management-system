@@ -18,6 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
+  // first check is this firstime signup 
+  // if yes redirect admin signup and signup complete redirect login page
+  // if no redirect login page but in login page ceck if user has token and verify token
+  // all ok 
   const signup = true
   const login = true
   return (

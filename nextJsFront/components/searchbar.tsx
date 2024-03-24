@@ -12,6 +12,10 @@ const Searchbar= () =>{
   const handleToggle = () => {
     setLogin(!login);
   }
+
+  const logout = ()=>{
+    // clear local store
+  }
   return (
     <div  className=" flex flex-row justify-between w-full bg-white shadow-lg h-10 px-5 pr-10  ">
         <div className="flex items-center justify-start">
@@ -40,7 +44,7 @@ const Searchbar= () =>{
                  
                 {login && (
                     <div className="absolute right-0 mt-10 py-1 w-24 bg-white  shadow-lg z-10">
-                    <button className="block px-2 py-2 text-gray-800 hover:bg-gray-200 w-1/5 text-left">
+                    <button onClick={logout} className="block px-2 py-2 text-gray-800 hover:bg-gray-200 w-1/5 text-left">
                         <FaSignOutAlt className="mr-2" />
                         logout
                     </button>

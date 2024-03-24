@@ -1,4 +1,5 @@
 'use client'
+import {useForm} from '@/hooks/useFormWithImg';
 import Image from 'next/image';
 import { useState, } from 'react';
 
@@ -19,44 +20,18 @@ const AddStudentForm = () => {
         image: null,
       };
     
-      const [formData, setFormData] = useState(initialFormData);
-      const [imagePreview, setImagePreview] = useState(null);
-     
-      const handleClear = () => {
-        setFormData(initialFormData);
-        setImagePreview(null);
-      };
-
-      const handleChange = (e:any) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value,
-        });
-      };
-    
-      const handleImageChange = (e:any) => {
-        const file = e.target.files[0];
-        setFormData({
-          ...formData,
-          image: file,
-        });
-    
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          setImagePreview(reader.result);
-        };
-    
-        if (file) {
-          reader.readAsDataURL(file);
-        }
-      };
-
-  const handleSubmit = (e:any) => {
-    e.preventDefault();
-    
-    console.log(formData);
+      
+  const onSubmit = (values:any) => {
+  
+    console.log(values);
   };
+
+const {formData,
+  imagePreview,
+  handleChange,
+  handleImageChange,
+  handleSubmit,
+  handleClear,} = useForm(initialFormData,onSubmit)
 
   return (
     <div className="max-w-5xl flex mx-auto flex-col justify-center rounded:md px-10 bg-white">
