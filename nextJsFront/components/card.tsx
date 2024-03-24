@@ -14,7 +14,7 @@ const Card = ({data}) => {
 
       <div className="px-6 py-4">
         <div className="text-sm">{data.name}</div>
-        <div className="font-bold text-gray-400 text-base">{data.amount}</div>
+        <div className="font-bold text-gray-400 text-base">{data.total}</div>
       </div>
     </div>
    

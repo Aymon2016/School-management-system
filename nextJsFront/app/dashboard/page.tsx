@@ -1,32 +1,13 @@
 
+
 import Searchbar from "@/components/searchbar";
 import Card from '@/components/card'
+import {Data} from '@/api/data'
 
-export default function Home() {
 
-  const data = [
-    {
-      name:'student',
-      amount:'123',
+export default  function Home() {
 
-    },
-    {
-      name:'teacher',
-      amount:'1234'
-    },
-    {
-      name:'teacher',
-      amount:'1234'
-    },
-    {
-      name:'teacher',
-      amount:'1234'
-    },
-    {
-      name:'teacher',
-      amount:'1234'
-    }
-  ]
+  
   return (
     <div className="flex flex-col w-full">
       <div className=" flex flex-row bg-white-500">
@@ -39,8 +20,8 @@ export default function Home() {
         </h4>
         <div className="flex p-5 flex-row gap-2">
           {
-            data.map( (item)=>(
-              <Card data ={item}></Card>
+            Data.map( (item)=>(
+              <Card key={Math.random()} data ={item}></Card>
             ))
           }
         </div>
@@ -48,3 +29,8 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
+

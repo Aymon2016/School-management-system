@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import {students} from '@/api/student'
 
 const StudentPage= ()=>{
     const [search, setSearch] = useState('');
@@ -17,57 +18,6 @@ const StudentPage= ()=>{
         setQuery({ ...query, [e.target.name]: e.target.value });
       };
   
-    const students = [
-        {
-            id:1,
-            name:'aymon',
-            phoneNumber:'90000',
-            class:'5'
-        },
-        {
-          id:1,
-          name:'aymon',
-          phoneNumber:'90000',
-          class:'5'
-      }, {
-        id:1,
-        name:'aymon',
-        phoneNumber:'90000',
-        class:'5'
-    },  {
-      id:1,
-      name:'aymon',
-      phoneNumber:'90000',
-      class:'5'
-  },
-  {
-    id:1,
-    name:'aymon',
-    phoneNumber:'90000',
-    class:'5'
-}, {
-  id:1,
-  name:'aymon',
-  phoneNumber:'90000',
-  class:'5'
-},  {
-  id:1,
-  name:'aymon',
-  phoneNumber:'90000',
-  class:'5'
-},
-{
-id:1,
-name:'aymon',
-phoneNumber:'90000',
-class:'5'
-}, {
-id:1,
-name:'aymon',
-phoneNumber:'90000',
-class:'5'
-}
-    ]
     return (
         <div className='bg-white rounded-md p-5 w-full h-96 overflow-x-auto overflow-y-auto'>
             <div className='flex gap-10'>
@@ -107,29 +57,29 @@ class:'5'
                       <tr>
                         <th className="border border-gray-400 px-4 py-2">ID</th>
                         <th className="border border-gray-400 px-4 py-2">Name</th>
+                        <th className="border border-gray-400 px-4 py-2">Number</th>
+                        <th className="border border-gray-400 px-4 py-2">Gender</th>
                         <th className="border border-gray-400 px-4 py-2">Class</th>
-                        <th className="border border-gray-400 px-4 py-2">Phone Number</th>
-                        <th className="border border-gray-400 px-4 py-2">ID</th>
-                        <th className="border border-gray-400 px-4 py-2">Name</th>
-                        <th className="border border-gray-400 px-4 py-2">Class</th>
-                        <th className="border border-gray-400 px-4 py-2">Phone Number</th>
+                        <th className="border border-gray-400 px-4 py-2">Section</th>
+                        <th className="border border-gray-400 px-4 py-2">Group</th>
+                        <th className="border border-gray-400 px-4 py-2">Religion</th>
                         <th className="border border-gray-400 px-4 py-2">Details</th>
                       </tr>
                     </thead>
                     <tbody>
                       {students.map(student => (
-                        <tr key={student.id}>
-                          <td className="border border-gray-400 px-4 py-2">{student.id}</td>
-                          <td className="border border-gray-400 px-4 py-2">{student.name}</td>
+                        <tr key={student.studentId}>
+                          <td className="border border-gray-400 px-4 py-2">{student.studentId}</td>
+                          <td className="border border-gray-400 px-4 py-2">{student.firstName} {student.lastName}</td>
+                          <td className="border border-gray-400 px-4 py-2">{student.studentContactNumber}</td>
+                          <td className="border border-gray-400 px-4 py-2">{student.gender}</td>
                           <td className="border border-gray-400 px-4 py-2">{student.class}</td>
-                          <td className="border border-gray-400 px-4 py-2">{student.phoneNumber}</td>
-                          <td className="border border-gray-400 px-4 py-2">{student.id}</td>
-                          <td className="border border-gray-400 px-4 py-2">{student.name}</td>
-                          <td className="border border-gray-400 px-4 py-2">{student.class}</td>
-                          <td className="border border-gray-400 px-4 py-2">{student.phoneNumber}</td>
-                          <Link href = {`students/${student.id}`}>
-                          <td className="border flex justify-center border-gray-400 px-4 py-2 text-white p-2 rounded-sm bg-red-500  focus:outline-none hover:bg-red-900 sm:text-sm">Show</td>
-                        </Link>
+                          <td className="border border-gray-400 px-4 py-2">{student.section}</td>
+                          <td className="border border-gray-400 px-4 py-2">{student.group}</td>
+                          <td className="border border-gray-400 px-4 py-2">{student.religious}</td>
+                          
+                          <td className=" text-center align-middle border border-gray-400">Show</td>
+                        
                         </tr>
                       ))}
                     </tbody>

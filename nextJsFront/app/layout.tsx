@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav";
+import Signup from '@/app/admin/signup/page'
+import Login from "./login/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,14 +17,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const signup = true
+  const login = true
   return (
     <html lang="en">
-      <body className={inter.className}>
-       <div className="flex flex-row">
-       <Nav></Nav> 
-        {children}   
-      </div>  
-       </body>
-    </html>
+    <body className={inter.className}>
+      <div className="flex flex-row">
+        {signup ? (
+          <>
+          {
+            login ? (
+              <> 
+              <Nav />
+              {children}
+              </>
+            ):
+            (
+              <Login />
+            )
+          }
+          </>
+        ) : (
+          <Signup />
+        )}
+      </div>
+    </body>
+  </html>
   );
 }

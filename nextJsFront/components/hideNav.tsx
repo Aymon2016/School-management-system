@@ -16,7 +16,7 @@ const NavWithoutTitle: React.FC<Props> = ({ open }) => {
         {
             name:"Dashboard",
             avator:student,
-            page:'dashboard'
+            page:'/'
         },
         {
             name : 'Student',
@@ -36,7 +36,8 @@ const NavWithoutTitle: React.FC<Props> = ({ open }) => {
         {
             name : 'Login',
             avator: student,
-            page:'/'
+            page:'login'
+            
         }
     ]
   return (
@@ -46,17 +47,31 @@ const NavWithoutTitle: React.FC<Props> = ({ open }) => {
         </div>
         <div className=" flex  justify-center ">
             <ul className="flex flex-col pl-2 px-0 pt-5 border-b border-gray-400 gap-2">
-                {
-                    icon.map( (item)=>(
-                        <Link href={item.page}>
-                        <li className=" py-2 border-b border-gray-500 flex">
-                            <Image className="w-5 h-5 mr-5" src={item.avator} alt="cross" />
-                        </li>
-                        </Link>
-            
-                    ))
-                }
-                
+                <Link href='/'>
+                    <li className=" py-2 border-b border-gray-500 flex">
+                        <Image className="w-5 h-5 mr-5" src={student} alt="cross" />
+                    </li>
+                </Link>
+                <Link href='/students'>
+                    <li className=" py-2 border-b border-gray-500 flex">
+                        <Image className="w-5 h-5 mr-5" src={student} alt="cross" />
+                    </li>
+                </Link>
+                <Link href='/teachers'>
+                    <li className=" py-2 border-b border-gray-500 flex">
+                        <Image className="w-5 h-5 mr-5" src={student} alt="cross" />
+                    </li>
+                </Link>
+                <Link href='/accounts'>
+                    <li className=" py-2 border-b border-gray-500 flex">
+                        <Image className="w-5 h-5 mr-5" src={student} alt="cross" />
+                    </li>
+                </Link>
+                <Link href='/setting'>
+                    <li className=" py-2 border-b border-gray-500 flex">
+                        <Image className="w-5 h-5 mr-5" src={student} alt="cross" />
+                    </li>
+                </Link>
             </ul>
            
         </div>

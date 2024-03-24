@@ -1,25 +1,29 @@
+import Searchbar from "@/components/searchbar";
+import Card from '@/components/card'
+import {Data} from '@/api/data'
 
-import Image from 'next/image'
-import thumnail from '@/public/loginPage/logo.png'
-import LoginForm from '@/components/loginForm'
 
+export default  function Home() {
 
-export default function Login() {
-    return (
-        <div className=" bg-slate-100  flex items-center justify-center  w-full h-screan">
-            <div className="  flex   items-center justify-center  rounded-md bg-blue-900 w-4/5 h-4/5 ">
-                <div id='vectorImg'  className="flex w-full h-full  rounded-md flex-col items-center justify-center" >   
-                        <Image src={thumnail} alt='logo' />
-                        <h4 className="sm:text-xl md:text-4xl font-bold text-white">WELCOME</h4>
-                </div>
-                <div className="flex mx-5 w-full h-full flex-col items-center  justify-center" >
-                 <LoginForm  />
-               
-                </div>
-            </div>
-
+  
+  return (
+    <div className="flex flex-col w-full">
+      <div className=" flex flex-row bg-white-500">
+        <Searchbar />
+      </div>
+      <div className=" flex  flex-col ">
+        <h4 className="sm:text-sm md:text-2xl py-2 px-5 font-semiBold text-black-">
+          Admin Dashboard
+          <hr className="border-b w-5 border-red-500 font-bold "/>
+        </h4>
+        <div className="flex p-5 flex-row gap-2">
+          {
+            Data.map( (item)=>(
+              <Card key={Math.random()} data ={item}></Card>
+            ))
+          }
         </div>
-    );
-  }
-
-
+      </div>
+    </div>
+  );
+}
